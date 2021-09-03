@@ -6,6 +6,7 @@ on:
       - '*'
     tags:
       - 'v*'
+  workflow_dispatch:
 
 jobs:
   build:
@@ -120,8 +121,8 @@ jobs:
           pull: true
           push: true
           tags: |
-            cloudb0x/cvm:${{ steps.releasetag.outputs.tag }}
-            cloudb0x/cvm:latest
+            saltydk/cvm:${{ steps.releasetag.outputs.tag }}
+            saltydk/cvm:latest
 
       # docker build (branch)
       - name: branch name
@@ -149,7 +150,7 @@ jobs:
           pull: true
           push: true
           tags: |
-            cloudb0x/cvm:${{ steps.dockertag.outputs.replaced }}
+            saltydk/cvm:${{ steps.dockertag.outputs.replaced }}
 
       # cleanup
       - name: cleanup
