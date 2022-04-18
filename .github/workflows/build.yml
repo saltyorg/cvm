@@ -180,7 +180,7 @@ jobs:
           cache-from: type=gha
           cache-to: type=gha,mode=max
           tags: |
-            cloudb0x/cvm:${{ steps.dockertag.outputs.replaced }}
+            saltydk/cvm:${{ steps.dockertag.outputs.replaced }}
 
       # cleanup
       - name: cleanup
